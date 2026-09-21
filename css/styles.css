@@ -228,7 +228,7 @@ p { margin: 0 0 1em; color: var(--color-text-muted); }
 /* Hero */
 .hero {
   max-width: var(--container-wide);
-  margin: 0 10px;
+  margin: 0 15px;
   padding: 96px 0;
   border-radius: var(--radius-xl);
   overflow: hidden;
