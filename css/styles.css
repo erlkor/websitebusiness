@@ -143,6 +143,13 @@ p { margin: 0 0 1em; color: var(--color-text-muted); }
   border-color: rgba(255, 255, 255, 0.4);
   color: #fff;
 }
+.btn-dark {
+  background: var(--color-dark);
+  color: #fff;
+}
+.btn-dark:hover {
+  filter: brightness(1.2);
+}
 .btn-lg { padding: 16px 32px; font-size: 1rem; }
 .btn-outline.btn-lg { padding: 14px 30px; }
 .btn-ghost.btn-lg { padding: 15px 31px; }
@@ -397,7 +404,6 @@ p { margin: 0 0 1em; color: var(--color-text-muted); }
   background-image: linear-gradient(#fff, #fff), var(--gradient-brand);
   background-origin: border-box;
   background-clip: padding-box, border-box;
-  box-shadow: var(--shadow-lg);
 }
 .price-badge {
   position: absolute;
