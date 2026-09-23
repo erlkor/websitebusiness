@@ -731,7 +731,7 @@ p { margin: 0 0 1em; color: var(--color-text-muted); }
   .grid-3 { grid-template-columns: repeat(3, 1fr); }
   .steps { grid-template-columns: repeat(4, 1fr); }
 
-  .nav-wrap { height: 74px; gap: 16px; padding-left: 44px; padding-right: 44px; }
+  .nav-wrap { height: 74px; gap: 25px; padding-left: 44px; padding-right: 44px; }
   .logo-mark { height: 14px; }
   .nav-toggle { display: none; }
   .nav-links {
@@ -740,7 +740,7 @@ p { margin: 0 0 1em; color: var(--color-text-muted); }
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 26px;
+    gap: 20px;
     background: none;
     border: none;
     box-shadow: none;
