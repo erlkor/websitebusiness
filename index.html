@@ -8,7 +8,9 @@
 <link rel="icon" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" media="print" onload="this.media='all'; this.onload=null;">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap"></noscript>
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -18,7 +20,7 @@
 <header class="site-header" id="site-header">
   <div class="container-wide nav-wrap">
     <a href="#" class="logo">
-      <img src="img/logo.png" alt="Zumer" class="logo-mark">
+      <img src="img/logo.png" alt="Zumer" class="logo-mark" width="402" height="48">
     </a>
 
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Åpne meny">
@@ -331,7 +333,7 @@
         </ul>
       </div>
 
-      <form class="contact-form" id="contactForm" action="mailto:hei@zumer.no" method="GET" enctype="text/plain">
+      <form class="contact-form" id="contactForm" data-mailto="hei@zumer.no">
         <div class="form-row">
           <label for="name">Navn</label>
           <input type="text" id="name" name="Navn" required>
@@ -364,13 +366,13 @@
   <div class="container footer-grid">
     <div>
       <a href="#" class="logo logo-footer">
-        <img src="img/logo.png" alt="Zumer" class="logo-mark">
+        <img src="img/logo.png" alt="Zumer" class="logo-mark" width="402" height="48">
       </a>
       <p class="footer-tagline">Gratis nettsider for norske småbedrifter, med en moderne og effektiv prosess.</p>
     </div>
 
     <div class="footer-col">
-      <h4>Snarveier</h4>
+      <h3>Snarveier</h3>
       <a href="#fordeler">Fordeler</a>
       <a href="#hvordan">Tjenesten</a>
       <a href="#priser">Priser</a>
@@ -378,7 +380,7 @@
     </div>
 
     <div class="footer-col">
-      <h4>Kontakt</h4>
+      <h3>Kontakt</h3>
       <a href="mailto:hei@zumer.no">hei@zumer.no</a>
       <a href="tel:+4700000000">+47 000 00 000</a>
       <span class="footer-muted">Norge</span>

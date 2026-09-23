@@ -690,18 +690,18 @@ p { margin: 0 0 1em; color: var(--color-text-muted); }
 }
 .logo-footer { margin-bottom: 10px; }
 .footer-tagline { font-size: 0.9rem; color: rgba(255, 255, 255, 0.55); max-width: 320px; }
-.footer-col h4 { color: #fff; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 14px; }
+.footer-col h3 { color: #fff; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 14px; }
 .footer-col { display: flex; flex-direction: column; gap: 10px; }
 .footer-col a { color: rgba(255, 255, 255, 0.75); text-decoration: none; font-size: 0.92rem; transition: color 0.15s ease; }
 .footer-col a:hover { color: var(--color-cyan); }
-.footer-muted { color: rgba(255, 255, 255, 0.45); font-size: 0.85rem; }
+.footer-muted { color: rgba(255, 255, 255, 0.65); font-size: 0.85rem; }
 .footer-bottom {
   display: flex;
   flex-direction: column;
   gap: 8px;
   padding-top: 20px;
   font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.65);
 }
 
 /* ===== Tablet / Desktop ===== */
