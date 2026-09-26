@@ -236,7 +236,7 @@ p { margin: 0 0 1em; color: var(--color-text-muted); }
 .hero {
   max-width: var(--container-wide);
   margin: 0 15px;
-  padding: 96px 0;
+  padding: 72px 0;
   border-radius: var(--radius-xl);
   overflow: hidden;
   position: relative;
@@ -707,7 +707,7 @@ p { margin: 0 0 1em; color: var(--color-text-muted); }
 /* ===== Tablet / Desktop ===== */
 @media (min-width: 720px) {
   .grid-2 { grid-template-columns: 1fr 1fr; }
-  .hero { margin: 0 20px; }
+  .hero { margin: 0 20px; padding: 96px 0; }
   .hero-actions { flex-direction: row; justify-content: center; }
   .trust-stats { flex-direction: row; justify-content: center; gap: 0; }
   .trust-stats > div { padding: 0 32px; position: relative; }
