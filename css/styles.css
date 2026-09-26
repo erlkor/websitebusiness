@@ -245,7 +245,7 @@ p { margin: 0 0 1em; color: var(--color-text-muted); }
     radial-gradient(800px 420px at -10% 115%, rgba(255, 64, 255, 0.20), transparent),
     var(--color-dark);
 }
-.hero-inner { text-align: center; }
+.hero-inner { text-align: center; padding-left: 30px; padding-right: 30px; }
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -708,6 +708,7 @@ p { margin: 0 0 1em; color: var(--color-text-muted); }
 @media (min-width: 720px) {
   .grid-2 { grid-template-columns: 1fr 1fr; }
   .hero { margin: 0 20px; padding: 96px 0; }
+  .hero-inner { padding-left: 20px; padding-right: 20px; }
   .hero-actions { flex-direction: row; justify-content: center; }
   .trust-stats { flex-direction: row; justify-content: center; gap: 0; }
   .trust-stats > div { padding: 0 32px; position: relative; }
