@@ -526,6 +526,29 @@ p { margin: 0 0 1em; color: var(--color-text-muted); }
   color: var(--color-text);
 }
 
+/* About */
+.about-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-md);
+}
+.about-header { margin-bottom: 18px; }
+.about-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin: 0;
+}
+.about-role {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin: 2px 0 0;
+}
+.about-card p { font-size: 1.02rem; }
+.about-card p:last-of-type { margin-bottom: 0; }
+
 /* Portfolio */
 .portfolio-card {
   background: #fff;
