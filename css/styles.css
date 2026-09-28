@@ -529,11 +529,13 @@ p { margin: 0 0 1em; color: var(--color-text-muted); }
 
 /* About */
 .about-card {
-  background: #fff;
-  border: 1px solid var(--color-border);
+  border: 2px solid transparent;
   border-radius: var(--radius-lg);
   padding: 32px;
   box-shadow: var(--shadow-md);
+  background-image: linear-gradient(#fff, #fff), var(--gradient-brand);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
 }
 .about-header { margin-bottom: 18px; }
 .about-name {
@@ -604,9 +606,9 @@ p { margin: 0 0 1em; color: var(--color-text-muted); }
 
 /* FAQ */
 .faq-item {
-  background: #fff;
+  background: var(--color-bg-alt);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   padding: 6px 18px;
   margin-bottom: 12px;
 }
@@ -625,7 +627,12 @@ p { margin: 0 0 1em; color: var(--color-text-muted); }
   right: 0;
   top: 12px;
   font-size: 1.3rem;
-  color: var(--color-dark);
+  font-weight: 700;
+  background-image: var(--gradient-brand);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 .faq-item[open] summary::after { content: "−"; }
 .faq-item p { padding-bottom: 16px; margin: 0; }
