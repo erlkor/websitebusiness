@@ -16,6 +16,13 @@
     });
   }
 
+  var form = document.getElementById("contactForm");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+    });
+  }
+
   var header = document.getElementById("site-header");
   var onScroll = function () {
     if (window.scrollY > 4) {
