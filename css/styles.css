@@ -666,12 +666,6 @@ p { margin: 0 0 1em; color: var(--color-text-muted); }
   outline-offset: 1px;
   background: #fff;
 }
-.form-note {
-  text-align: center;
-  font-size: 0.8rem;
-  margin: 12px 0 0;
-}
-
 /* Footer */
 .site-footer {
   background: var(--color-header-bg);
