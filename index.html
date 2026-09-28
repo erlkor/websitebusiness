@@ -367,28 +367,43 @@ src="https://www.facebook.com/tr?id=557366873547529&ev=PageView&noscript=1"
         </ul>
       </div>
 
-      <form class="contact-form" id="contactForm" data-mailto="hei@zumer.no">
-        <div class="form-row">
-          <label for="name">Navn</label>
-          <input type="text" id="name" name="Navn" required>
+      <form class="contact-form" id="contactForm" data-mailto="hei@zumer.no" novalidate>
+        <div class="form-progress"><div class="form-progress-bar" id="formProgressBar"></div></div>
+
+        <div class="form-step" data-step="1">
+          <div class="form-row">
+            <label for="name">Navn</label>
+            <input type="text" id="name" name="Navn" required>
+          </div>
+          <div class="form-row">
+            <label for="business">Bedriftsnavn</label>
+            <input type="text" id="business" name="Bedrift" required>
+          </div>
         </div>
-        <div class="form-row">
-          <label for="business">Bedriftsnavn</label>
-          <input type="text" id="business" name="Bedrift" required>
+
+        <div class="form-step" data-step="2" hidden>
+          <div class="form-row">
+            <label for="email">E-post</label>
+            <input type="email" id="email" name="subject" required>
+          </div>
+          <div class="form-row">
+            <label for="phone">Telefon</label>
+            <input type="tel" id="phone" name="Telefon" required>
+          </div>
         </div>
-        <div class="form-row">
-          <label for="email">E-post</label>
-          <input type="email" id="email" name="subject" required>
+
+        <div class="form-step" data-step="3" hidden>
+          <div class="form-row">
+            <label for="message">Kort om bedriften din</label>
+            <textarea id="message" name="body" rows="3" placeholder="Hva slags bedrift, og hva ønsker du deg av en nettside?"></textarea>
+          </div>
         </div>
-        <div class="form-row">
-          <label for="phone">Telefon</label>
-          <input type="tel" id="phone" name="Telefon" required>
+
+        <div class="form-nav">
+          <button type="button" class="btn btn-outline form-back" id="formBack" hidden>Tilbake</button>
+          <button type="button" class="btn btn-primary" id="formNext">Neste</button>
+          <button type="submit" class="btn btn-dark" id="formSubmit" hidden>Send inn</button>
         </div>
-        <div class="form-row">
-          <label for="message">Kort om bedriften din</label>
-          <textarea id="message" name="body" rows="3" placeholder="Hva slags bedrift, og hva ønsker du deg av en nettside?"></textarea>
-        </div>
-        <button type="submit" class="btn btn-dark btn-block">Send inn</button>
       </form>
     </div>
   </section>
