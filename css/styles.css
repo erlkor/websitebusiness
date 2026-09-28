@@ -104,6 +104,7 @@ p { margin: 0 0 1em; color: var(--color-text-muted); }
   gap: 8px;
   padding: 13px 26px;
   border-radius: 999px;
+  font-family: inherit;
   font-weight: 700;
   font-size: 0.95rem;
   text-decoration: none;
@@ -707,7 +708,7 @@ p { margin: 0 0 1em; color: var(--color-text-muted); }
   background: #fff;
 }
 .form-progress {
-  height: 4px;
+  height: 8px;
   background: var(--color-border);
   border-radius: 999px;
   overflow: hidden;
