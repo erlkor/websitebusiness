@@ -20,6 +20,7 @@
   if (form) {
     var steps = Array.prototype.slice.call(form.querySelectorAll(".form-step"));
     var progressBar = document.getElementById("formProgressBar");
+    var stepLabel = document.getElementById("formStepLabel");
     var backBtn = document.getElementById("formBack");
     var nextBtn = document.getElementById("formNext");
     var submitBtn = document.getElementById("formSubmit");
@@ -34,6 +35,7 @@
       nextBtn.hidden = isLast;
       submitBtn.hidden = !isLast;
       progressBar.style.width = ((index + 1) / steps.length) * 100 + "%";
+      stepLabel.textContent = "Steg " + (index + 1) + " av " + steps.length;
       var firstField = steps[index].querySelector("input, textarea");
       if (firstField) firstField.focus({ preventScroll: true });
     };

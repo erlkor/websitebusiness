@@ -707,6 +707,12 @@ p { margin: 0 0 1em; color: var(--color-text-muted); }
   outline-offset: 1px;
   background: #fff;
 }
+.form-step-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  margin: 0 0 8px;
+}
 .form-progress {
   height: 8px;
   background: var(--color-border);
