@@ -41,7 +41,15 @@
     };
 
     var stepIsValid = function (index) {
-      var fields = steps[index].querySelectorAll("input, textarea");
+      var step = steps[index];
+      var planInputs = step.querySelectorAll('input[name="Plan"]');
+      if (planInputs.length) {
+        var planError = step.querySelector(".plan-error");
+        var checked = step.querySelector('input[name="Plan"]:checked');
+        if (planError) planError.hidden = !!checked;
+        return !!checked;
+      }
+      var fields = step.querySelectorAll("input, textarea");
       for (var i = 0; i < fields.length; i++) {
         if (!fields[i].checkValidity()) {
           fields[i].reportValidity();
@@ -79,6 +87,16 @@
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+    });
+
+    document.querySelectorAll("[data-plan]").forEach(function (planBtn) {
+      planBtn.addEventListener("click", function () {
+        var plan = planBtn.getAttribute("data-plan");
+        var radio = form.querySelector('input[name="Plan"][value="' + plan + '"]');
+        if (radio) radio.checked = true;
+        currentStep = 0;
+        showStep(currentStep);
+      });
     });
   }
 

@@ -203,7 +203,7 @@ src="https://www.facebook.com/tr?id=557366873547529&ev=PageView&noscript=1"
           <h3>Drift</h3>
           <p class="price"><span class="price-num">395</span> kr <span class="price-unit">/ mnd</span></p>
           <p class="price-desc">Alt du trenger for at nettsiden skal fungere trygt og stabilt.</p>
-          <a href="#kontakt" class="btn btn-dark btn-block">Start med Drift</a>
+          <a href="#kontakt" class="btn btn-dark btn-block" data-plan="Drift">Start med Drift</a>
           <div class="price-divider"></div>
           <p class="price-features-label">Fordeler:</p>
           <ul class="price-features">
@@ -219,7 +219,7 @@ src="https://www.facebook.com/tr?id=557366873547529&ev=PageView&noscript=1"
           <h3>Vekst</h3>
           <p class="price"><span class="price-num">995</span> kr <span class="price-unit">/ mnd</span></p>
           <p class="price-desc">Alt i Drift, pluss aktivt arbeid for å hente flere kunder.</p>
-          <a href="#kontakt" class="btn btn-primary btn-block">Start med Vekst</a>
+          <a href="#kontakt" class="btn btn-primary btn-block" data-plan="Vekst">Start med Vekst</a>
           <div class="price-divider"></div>
           <p class="price-features-label">Fordeler:</p>
           <ul class="price-features">
@@ -376,6 +376,24 @@ src="https://www.facebook.com/tr?id=557366873547529&ev=PageView&noscript=1"
         <div class="form-progress"><div class="form-progress-bar" id="formProgressBar"></div></div>
 
         <div class="form-step" data-step="1">
+          <div class="plan-select">
+            <label class="plan-card">
+              <input type="radio" name="Plan" value="Drift">
+              <span class="plan-card-name">Drift</span>
+              <span class="plan-card-price">395 kr/mnd</span>
+              <span class="plan-card-desc">Hosting, sikkerhet og oppdateringer</span>
+            </label>
+            <label class="plan-card">
+              <input type="radio" name="Plan" value="Vekst">
+              <span class="plan-card-name">Vekst</span>
+              <span class="plan-card-price">995 kr/mnd</span>
+              <span class="plan-card-desc">Alt i Drift, pluss SEO og vekst</span>
+            </label>
+          </div>
+          <p class="plan-error" id="planError" hidden>Velg en plan for å fortsette.</p>
+        </div>
+
+        <div class="form-step" data-step="2" hidden>
           <div class="form-row">
             <label for="name">Navn</label>
             <input type="text" id="name" name="Navn" placeholder="Fullt navn" required>
@@ -386,7 +404,7 @@ src="https://www.facebook.com/tr?id=557366873547529&ev=PageView&noscript=1"
           </div>
         </div>
 
-        <div class="form-step" data-step="2" hidden>
+        <div class="form-step" data-step="3" hidden>
           <div class="form-row">
             <label for="email">E-post</label>
             <input type="email" id="email" name="subject" placeholder="E-postadresse" required>
@@ -397,7 +415,7 @@ src="https://www.facebook.com/tr?id=557366873547529&ev=PageView&noscript=1"
           </div>
         </div>
 
-        <div class="form-step" data-step="3" hidden>
+        <div class="form-step" data-step="4" hidden>
           <div class="form-row">
             <label for="message">Kort om bedriften din</label>
             <textarea id="message" name="body" rows="3" placeholder="Hva slags bedrift, og hva ønsker du deg av en nettside?"></textarea>
