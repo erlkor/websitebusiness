@@ -739,6 +739,7 @@ p { margin: 0 0 1em; color: var(--color-text-muted); }
   display: grid;
   grid-template-columns: 1fr;
   gap: 12px;
+  margin-bottom: 16px;
 }
 .plan-card {
   display: flex;
