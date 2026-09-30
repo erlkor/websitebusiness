@@ -87,6 +87,35 @@
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+
+      var formNav = document.querySelector(".form-nav");
+      var formError = document.getElementById("formError");
+      var formSuccess = document.getElementById("formSuccess");
+      var formProgress = document.querySelector(".form-progress");
+
+      formError.hidden = true;
+      submitBtn.disabled = true;
+      var originalText = submitBtn.textContent;
+      submitBtn.textContent = "Sender...";
+
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" }
+      })
+        .then(function (response) {
+          if (!response.ok) throw new Error("Innsending feilet");
+          steps.forEach(function (step) { step.hidden = true; });
+          formProgress.hidden = true;
+          stepLabel.hidden = true;
+          formNav.hidden = true;
+          formSuccess.hidden = false;
+        })
+        .catch(function () {
+          formError.hidden = false;
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        });
     });
 
     document.querySelectorAll("[data-plan]").forEach(function (planBtn) {

@@ -371,8 +371,11 @@ src="https://www.facebook.com/tr?id=557366873547529&ev=PageView&noscript=1"
         </ul>
       </div>
 
-      <form class="contact-form" id="contactForm" data-mailto="hei@zumer.no" novalidate>
-        <p class="form-step-label" id="formStepLabel">Steg 1 av 3</p>
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/mppwbnvk" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="Ny henvendelse fra Zumer-nettsiden">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+        <p class="form-step-label" id="formStepLabel">Steg 1 av 4</p>
         <div class="form-progress"><div class="form-progress-bar" id="formProgressBar"></div></div>
 
         <div class="form-step" data-step="1">
@@ -414,7 +417,7 @@ src="https://www.facebook.com/tr?id=557366873547529&ev=PageView&noscript=1"
         <div class="form-step" data-step="4" hidden>
           <div class="form-row">
             <label for="email">E-post</label>
-            <input type="email" id="email" name="subject" placeholder="E-postadresse" required>
+            <input type="email" id="email" name="email" placeholder="E-postadresse" required>
           </div>
           <div class="form-row">
             <label for="phone">Telefon</label>
@@ -426,6 +429,12 @@ src="https://www.facebook.com/tr?id=557366873547529&ev=PageView&noscript=1"
           <button type="button" class="btn btn-outline form-back" id="formBack" hidden>Tilbake</button>
           <button type="button" class="btn btn-primary" id="formNext">Neste</button>
           <button type="submit" class="btn btn-dark" id="formSubmit" hidden>Send inn</button>
+        </div>
+        <p class="form-error" id="formError" hidden>Noe gikk galt. Prøv igjen, eller send oss en e-post direkte på <a href="mailto:hei@zumer.no">hei@zumer.no</a>.</p>
+
+        <div class="form-success" id="formSuccess" hidden>
+          <h3>Takk for din henvendelse!</h3>
+          <p>Vi tar kontakt med deg innen 1 virkedag.</p>
         </div>
       </form>
     </div>
