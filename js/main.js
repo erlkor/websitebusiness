@@ -73,19 +73,19 @@
       if (firstField && canHover) firstField.focus({ preventScroll: true });
     };
 
-    var stepIsValid = function (index) {
+    var stepIsValid = function (index, report) {
       var step = steps[index];
       var planInputs = step.querySelectorAll('input[name="Plan"]');
       if (planInputs.length) {
         var planError = step.querySelector(".plan-error");
         var checked = step.querySelector('input[name="Plan"]:checked');
-        if (planError) planError.hidden = !!checked;
+        if (planError && report) planError.hidden = !!checked;
         return !!checked;
       }
       var fields = step.querySelectorAll("input, textarea");
       for (var i = 0; i < fields.length; i++) {
         if (!fields[i].checkValidity()) {
-          fields[i].reportValidity();
+          if (report) fields[i].reportValidity();
           return false;
         }
       }
@@ -96,7 +96,7 @@
       showStep(currentStep);
 
       nextBtn.addEventListener("click", function () {
-        if (!stepIsValid(currentStep)) return;
+        if (!stepIsValid(currentStep, true)) return;
         if (currentStep < steps.length - 1) {
           currentStep++;
           showStep(currentStep);
@@ -120,6 +120,15 @@
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+
+      for (var i = 0; i < steps.length; i++) {
+        if (!stepIsValid(i, false)) {
+          currentStep = i;
+          showStep(i);
+          stepIsValid(i, true);
+          return;
+        }
+      }
 
       var formNav = document.querySelector(".form-nav");
       var formError = document.getElementById("formError");
