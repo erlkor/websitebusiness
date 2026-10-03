@@ -25,6 +25,39 @@
     var nextBtn = document.getElementById("formNext");
     var submitBtn = document.getElementById("formSubmit");
     var currentStep = 0;
+    var canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    var siteHeader = document.getElementById("site-header");
+    var keepTimer;
+
+    var keepFieldVisible = function () {
+      var field = document.activeElement;
+      if (!field || !form.contains(field)) return;
+      if (field.tagName !== "TEXTAREA" && !(field.tagName === "INPUT" && field.type !== "radio")) return;
+      var row = field.closest(".form-row") || field;
+      var vv = window.visualViewport;
+      var viewTop = vv ? vv.offsetTop : 0;
+      var viewHeight = vv ? vv.height : window.innerHeight;
+      var topLimit = viewTop + (siteHeader ? siteHeader.offsetHeight : 0) + 16;
+      var bottomLimit = viewTop + viewHeight - 16;
+      var rect = row.getBoundingClientRect();
+      if (rect.top < topLimit || rect.bottom > bottomLimit) {
+        window.scrollBy({ top: rect.top - topLimit, behavior: "instant" });
+      }
+    };
+
+    var scheduleKeepVisible = function (delay) {
+      clearTimeout(keepTimer);
+      keepTimer = setTimeout(keepFieldVisible, delay);
+    };
+
+    form.addEventListener("focusin", function () {
+      scheduleKeepVisible(350);
+    });
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener("resize", function () {
+        scheduleKeepVisible(100);
+      });
+    }
 
     var showStep = function (index) {
       steps.forEach(function (step, i) {
@@ -37,7 +70,7 @@
       progressBar.style.width = ((index + 1) / steps.length) * 100 + "%";
       stepLabel.textContent = "Steg " + (index + 1) + " av " + steps.length;
       var firstField = steps[index].querySelector("input, textarea");
-      if (firstField) firstField.focus({ preventScroll: true });
+      if (firstField && canHover) firstField.focus({ preventScroll: true });
     };
 
     var stepIsValid = function (index) {

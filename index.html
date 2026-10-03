@@ -379,7 +379,9 @@ src="https://www.facebook.com/tr?id=557366873547529&ev=PageView&noscript=1"
         <div class="form-progress"><div class="form-progress-bar" id="formProgressBar"></div></div>
 
         <div class="form-step" data-step="1">
-          <div class="plan-select">
+          <p class="plan-label" id="planLabel">Hvilken plan vil du starte med?</p>
+          <p class="plan-note">Valget er ikke bindende — du kan bytte plan når som helst.</p>
+          <div class="plan-select" role="radiogroup" aria-labelledby="planLabel">
             <label class="plan-card">
               <input type="radio" name="Plan" value="Drift">
               <span class="plan-card-name">Drift</span>

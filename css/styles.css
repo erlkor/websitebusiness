@@ -736,6 +736,16 @@ p { margin: 0 0 1em; color: var(--color-text-muted); }
 .form-nav .btn { flex: 1; }
 .form-back { flex: 0 0 auto; }
 
+.plan-label {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--color-text);
+  margin: 0 0 2px;
+}
+.plan-note {
+  font-size: 0.82rem;
+  margin: 0 0 12px;
+}
 .plan-select {
   display: grid;
   grid-template-columns: 1fr;
