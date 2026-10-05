@@ -147,6 +147,13 @@
       })
         .then(function (response) {
           if (!response.ok) throw new Error("Innsending feilet");
+          var chosen = form.querySelector('input[name="Plan"]:checked');
+          var planCard = chosen && chosen.closest(".plan-card");
+          if (planCard) {
+            document.getElementById("successPlan").textContent =
+              planCard.querySelector(".plan-card-name").textContent + ", " +
+              planCard.querySelector(".plan-card-price").textContent;
+          }
           steps.forEach(function (step) { step.hidden = true; });
           formProgress.hidden = true;
           stepLabel.hidden = true;
