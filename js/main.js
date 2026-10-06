@@ -148,6 +148,7 @@
         .then(function (response) {
           if (!response.ok) throw new Error("Innsending feilet");
           var chosen = form.querySelector('input[name="Plan"]:checked');
+          if (window.fbq) window.fbq("track", "Lead", { content_name: chosen ? chosen.value : "" });
           var planCard = chosen && chosen.closest(".plan-card");
           if (planCard) {
             document.getElementById("successPlan").textContent =
