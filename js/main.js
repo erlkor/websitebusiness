@@ -59,7 +59,7 @@
       });
     }
 
-    var showStep = function (index) {
+    var showStep = function (index, focusField) {
       steps.forEach(function (step, i) {
         step.hidden = i !== index;
       });
@@ -67,10 +67,10 @@
       var isLast = index === steps.length - 1;
       nextBtn.hidden = isLast;
       submitBtn.hidden = !isLast;
-      progressBar.style.width = ((index + 1) / steps.length) * 100 + "%";
+      progressBar.style.transform = "translateX(" + (((index + 1) / steps.length) * 100 - 100) + "%)";
       stepLabel.textContent = "Steg " + (index + 1) + " av " + steps.length;
       var firstField = steps[index].querySelector("input, textarea");
-      if (firstField && canHover) firstField.focus({ preventScroll: true });
+      if (firstField && canHover && focusField !== false) firstField.focus({ preventScroll: true });
     };
 
     var stepIsValid = function (index, report) {
@@ -93,7 +93,7 @@
     };
 
     if (steps.length) {
-      showStep(currentStep);
+      showStep(currentStep, false);
 
       nextBtn.addEventListener("click", function () {
         if (!stepIsValid(currentStep, true)) return;
@@ -179,13 +179,13 @@
   }
 
   var header = document.getElementById("site-header");
-  var onScroll = function () {
-    if (window.scrollY > 4) {
-      header.style.boxShadow = "0 4px 16px rgba(17,24,45,0.08)";
-    } else {
-      header.style.boxShadow = "none";
-    }
-  };
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  if (header && "IntersectionObserver" in window) {
+    var sentinel = document.createElement("div");
+    sentinel.setAttribute("aria-hidden", "true");
+    sentinel.style.cssText = "position:absolute;top:0;left:0;width:1px;height:5px;pointer-events:none";
+    document.body.insertBefore(sentinel, document.body.firstChild);
+    new IntersectionObserver(function (entries) {
+      header.style.boxShadow = entries[0].isIntersecting ? "none" : "0 4px 16px rgba(17,24,45,0.08)";
+    }).observe(sentinel);
+  }
 })();

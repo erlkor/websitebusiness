@@ -1,9 +1,10 @@
 @font-face {
-  font-family: 'Markdisc';
-  src: url('../fonts/markdisc-regular.otf') format('opentype');
-  font-weight: 400;
+  font-family: 'DM Sans';
+  src: url('../fonts/dm-sans-latin.woff2') format('woff2');
+  font-weight: 400 800;
   font-style: normal;
   font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 :root {
@@ -722,10 +723,11 @@ p { margin: 0 0 1em; color: var(--color-text-muted); }
 }
 .form-progress-bar {
   height: 100%;
-  width: 33.33%;
+  width: 100%;
   background: var(--gradient-brand);
   border-radius: 999px;
-  transition: width 0.3s ease;
+  transform: translateX(-75%);
+  transition: transform 0.3s ease;
 }
 .form-nav {
   display: flex;
@@ -784,7 +786,7 @@ p { margin: 0 0 1em; color: var(--color-text-muted); }
 .plan-card-price {
   font-weight: 700;
   font-size: 0.88rem;
-  color: var(--color-cyan);
+  color: #0a6c95;
   margin-top: 4px;
 }
 .plan-card-desc {
